@@ -19,16 +19,14 @@ public class Utils {
         throws ServletException, IOException{
         req.getRequestDispatcher("/WEB-INF/view/" + jsp + ".jsp").forward(req, res);
     }
-    public static int parseStringToInt(String str){
-        return parseStringToInt(str, 0);
+    public static int getParameterInt(HttpServletRequest req, String key) {
+        String val = req.getParameter(key);
+        return parseStringToInt(val, 0);
     }
-    public static int parseStringToInt(String str, int defVal){
+    public static int parseStringToInt(String val, int defVal){
         try{
-            return Integer.parseInt(str);
+            return Integer.parseInt(val);
         } catch(Exception e){}
         return defVal;
-    }
-    public static int getParameterInt(HttpServletRequest req, String key){
-        return parseStringToInt(req.getParameter(key));
     }
 }

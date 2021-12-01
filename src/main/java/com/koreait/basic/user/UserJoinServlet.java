@@ -33,5 +33,8 @@ public class UserJoinServlet extends HttpServlet {
         param.setGender(gender);
 
         System.out.println(param);
+
+        int result = UserDAO.join(param);
+        res.sendRedirect("/user/login");
     }
 }
