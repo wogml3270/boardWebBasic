@@ -18,7 +18,7 @@ function joinChk(){
         alert('이름이 너무 깁니다 5글자 이하로 적어주세요');
         return false;
     } else {
-        alert("회원가입 완료");
+        alert("회원가입이 정상적으로 완료되었습니다");
         return true;
     }
 }
