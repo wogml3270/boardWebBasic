@@ -3,16 +3,16 @@
 <div>
     <form action="/user/join" method="post" id="frm" onsubmit="return joinChk();">
         <div>
-            <input type="text" name="uid" placeholder="id type" required>
+            <input type="text" name="uid" placeholder="id" required>
         </div>
         <div>
-            <input type="password" name="upw" placeholder="password type" required>
+            <input type="password" name="upw" placeholder="password" required>
         </div>
         <div>
-            <input type="password" name="reupw" placeholder="password comfirm" required>
+            <input type="password" name="reupw" placeholder="password" required>
         </div>
         <div>
-            <input type="text" name="nm" placeholder="name type" required>
+            <input type="text" name="nm" placeholder="name" required>
         </div>
         <div>
             <label>female<input type="radio" value="0" name="gender" checked></label>
