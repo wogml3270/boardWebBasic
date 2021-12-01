@@ -31,7 +31,4 @@ public class Utils {
     public static int getParameterInt(HttpServletRequest req, String key){
         return parseStringToInt(req.getParameter(key));
     }
-    public static int getParameterInt(HttpServletRequest req, String key, int defVal){
-        return parseStringToInt(req.getParameter(key), defVal);
-    }
 }

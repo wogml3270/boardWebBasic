@@ -3,6 +3,7 @@ package com.koreait.basic.user;
 import com.koreait.basic.Utils;
 import com.koreait.basic.dao.UserDAO;
 import com.koreait.basic.user.model.UserEntity;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,16 +24,14 @@ public class UserJoinServlet extends HttpServlet {
         String upw = req.getParameter("upw");
         String nm = req.getParameter("nm");
         int gender = Utils.getParameterInt(req, "gender");
-
-        System.out.println(uid);
-        System.out.println(upw);
-        System.out.println(nm);
-        System.out.println(gender);
+        String hashPw = BCrypt.hashpw(upw, BCrypt.gensalt());
 
         UserEntity param = new UserEntity();
         param.setUid(uid);
-        param.setUpw(upw);
+        param.setUpw(hashPw);
         param.setNm(nm);
         param.setGender(gender);
+
+        System.out.println(param);
     }
 }
