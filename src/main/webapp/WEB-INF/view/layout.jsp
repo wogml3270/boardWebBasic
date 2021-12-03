@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${requestScope.title}</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/common.css?ver=5">
+    <link type="text/css" rel="stylesheet" href="/static/css/common.css?ver=6">
 </head>
 <body>
     <div class="container">
@@ -29,6 +29,15 @@
             <p>footer</p>
         </div>
     </div>
-
+<c:if test="${ err != null }">
+    <script>
+        var body = document.querySelector('body');
+        body.onload = function(){
+            setTimeout(function(){
+                alert('<c:out value="${err}"/>');
+            }, 500);
+        }
+    </script>
+</c:if>
 </body>
 </html>

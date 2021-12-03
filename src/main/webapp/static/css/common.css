@@ -11,12 +11,33 @@ td, th { padding: 5px; }
     min-height: 100vh;
 }
 
-.header { background-color: #fab4b4; padding: 10px 30px; }
-.topMenu { display: flex; }
-.topMenu li a { color: #fff; font-size: 20px; }
-.topMenu li a:hover { color: #efefef; }
-.topMenu li:not(:first-child) { margin-left: 15px; }
+.header {
+    background-color: #fab4b4;
+    padding: 10px 30px;
+}
+.topMenu {
+    display: flex;
+}
+.topMenu li a {
+    background-color: #262626;
+    color: #fff;
+    font-size: 20px;
+}
+.topMenu li a:hover {
+    color: #efefef;
+}
+.topMenu li:not(:first-child) {
+    margin-left: 15px;
+}
 
-.body { padding: 20px; }
+.body {
+    padding: 20px;
+}
 
-.footer { background-color: #4b4b4b; color: #fff; }
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4b4b4b;
+    color: #fff;
+}
