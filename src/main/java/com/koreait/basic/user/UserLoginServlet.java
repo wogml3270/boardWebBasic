@@ -1,12 +1,16 @@
 package com.koreait.basic.user;
 
 import com.koreait.basic.Utils;
+import com.koreait.basic.dao.UserDAO;
+import com.koreait.basic.user.model.LoginResult;
+import com.koreait.basic.user.model.UserEntity;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @WebServlet("/user/login")
@@ -17,6 +21,25 @@ public class UserLoginServlet extends HttpServlet {
     }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        String uid = req.getParameter("uid");
+        String upw = req.getParameter("upw");
+        String nm = req.getParameter("nm");
+        UserEntity entity  = new UserEntity();
+        entity.setUid(uid);
+        entity.setUpw(upw);
+        entity.setNm(nm);
+        System.out.println("login Entity : " + entity);
 
+        LoginResult lr = UserDAO.login(entity);
+        System.out.println("result : " + lr.getResult());
+        switch(lr.getResult()){
+            case 1:
+                HttpSession hs = req.getSession();
+                hs.setAttribute("loginUser", lr.getLoginUser());
+                res.sendRedirect("/board/list");
+                break;
+            default:
+                break;
+        }
     }
 }
