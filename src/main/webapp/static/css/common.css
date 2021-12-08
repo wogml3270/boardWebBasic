@@ -10,6 +10,11 @@ td, th { padding: 5px; }
     grid-template-rows: 100px 1fr 80px;
     min-height: 100vh;
 }
+table{border-top: 1px solid #222;border-left: 0;border-right: 0;}
+table th{background: #eee;border-top: 2px solid dodgerblue;}
+table *{border-color: #ddd;}
+table th:first-child,table td:first-child{border-left: 0;}
+table th:last-child,table td:last-child{border-right: 0;}
 
 .header {
     background-color: #fab4b4;
@@ -19,7 +24,6 @@ td, th { padding: 5px; }
     display: flex;
 }
 .topMenu li a {
-    background-color: #262626;
     color: #fff;
     font-size: 20px;
 }
@@ -29,9 +33,49 @@ td, th { padding: 5px; }
 .topMenu li:not(:first-child) {
     margin-left: 15px;
 }
+.topMenu li:last-child{
+    flex-grow: 1;
+    text-align: right;
+    color: #efefef;
+}
 
 .body {
     padding: 20px;
+}
+.login-title{
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.wrap{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.wrap > div{
+    width: 400px;
+    background-color: beige;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+.wrap > div input[type="text"]{
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.wrap > div input[type="password"]{
+    padding: 5px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.wrap > div input[type="submit"]{
+    padding: 5px;
+    width: 100%;
+    background-color: brown;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
 }
 
 .footer {

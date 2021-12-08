@@ -2,3 +2,15 @@
     background-color: #efefef;
     cursor: pointer;
 }
+.selected{
+    color: chocolate;
+    font-weight: 900;
+}
+.pageContainer{
+    padding: 10px 50px;
+    justify-content: center;
+    display: flex;
+}
+.pageContainer div:not(:first-child){
+    margin-left: 8px;
+}

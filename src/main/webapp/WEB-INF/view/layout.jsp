@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${requestScope.title}</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/common.css?ver=6">
+    <link type="text/css" rel="stylesheet" href="/static/css/common.css?ver=8">
 </head>
 <body>
     <div class="container">
@@ -24,19 +24,21 @@
                 </c:if>
             </ul>
         </div>
-        <div class="body"><jsp:include page="/WEB-INF/view/${requestScope.page}.jsp"></jsp:include></div>
+        <div class="body">
+            <jsp:include page="/WEB-INF/view/${requestScope.page}.jsp"></jsp:include>
+        </div>
         <div class="footer">
             <p>footer</p>
         </div>
     </div>
 <c:if test="${ err != null }">
     <script>
-        var body = document.querySelector('body');
+        const body = document.querySelector('body');
         body.onload = function(){
             setTimeout(function(){
                 alert('<c:out value="${err}"/>');
             }, 500);
-        }
+        };
     </script>
 </c:if>
 </body>
