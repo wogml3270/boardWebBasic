@@ -233,7 +233,7 @@ public class BoardDAO {
     public static int delBoard(BoardEntity entity) {
         Connection con = null;
         PreparedStatement ps = null;
-        String sql = "DELETE FROM t_board WHERE iboard = ? AND writer = ?";
+        String sql = " DELETE FROM t_board WHERE iboard = ? AND writer = ?";
         try {
             con = DbUtils.getCon();
             ps = con.prepareStatement(sql);

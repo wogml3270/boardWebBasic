@@ -13,7 +13,6 @@ public class DbUtils {
         final String DRIVER = "com.mysql.cj.jdbc.Driver";
         Class.forName(DRIVER);
         Connection con = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
-        System.out.println("연결 성공");
         return con;
     }
     public static void close(Connection con, PreparedStatement ps){

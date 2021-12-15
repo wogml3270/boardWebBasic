@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-<link rel="stylesheet" href="/static/css/board/list.css?ver=8">
+<link rel="stylesheet" href="/static/css/board/list.css?v=9">
 <div>
     <form action="/board/list" method="get" id="searchFrm">
         <div>
@@ -15,7 +15,7 @@
             <input type="search" name="searchText" value="${param.searchText}">
             <input type="submit" value="검색">
             나타내는 행 수 :
-            <select name="rowCtn">
+            <select name="rowCnt">
                 <c:forEach var="i" begin="5" end="30" step="5">
                     <option value="${i}" ${i == param.rowCnt ? 'selected' : ''}>${i}개</option>
                 </c:forEach>
@@ -28,22 +28,22 @@
         <div>글이 없습니다.</div>
     </c:when>
     <c:otherwise>
-        <div>
+        <div id="boardTableWrap">
             <table id="boardTable">
                 <colgroup>
-                    <col width="20%">
-                    <col>
-                    <col>
-                    <col width="100px">
-                    <col>
+                    <col width="5%">
+                    <col width="30%">
+                    <col width="5%">
+                    <col width="30%">
+                    <col width="30%">
                 </colgroup>
-                <tr>
-                    <th>no</th>
-                    <th>title</th>
-                    <th>hits</th>
-                    <th>writer</th>
-                    <th>reg-datetime</th>
-                </tr>
+                    <tr>
+                        <th>no</th>
+                        <th>title</th>
+                        <th>hits</th>
+                        <th>writer</th>
+                        <th>reg-datetime</th>
+                    </tr>
                 <c:forEach items="${requestScope.list}" var="item">
                     <c:set var="eachTitle" value="${fn:replace(fn:replace(item.title, '>', '&gt;'), '<', '&lt;')}"/>
                     <c:if test="${param.searchType == 1 || param.searchType == 3 || param.searchType == 5}">

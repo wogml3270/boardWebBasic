@@ -6,22 +6,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${requestScope.title}</title>
-    <link type="text/css" rel="stylesheet" href="/static/css/common.css?ver=8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link type="text/css" rel="stylesheet" href="/static/css/common.css?v=4">
+    <link type="text/css" rel="stylesheet" href="/static/css/user/userPage.css?v=4">
 </head>
 <body>
     <div class="container">
         <div class="header">
             <ul class="topMenu">
-                    <li><a href="/board/list">게시판</a></li>
-                <c:if test="${sessionScope.loginUser != null}">
-                    <li><a href="/board/regmod">글쓰기</a></li>
-                    <li><a href="/user/logout">로그아웃</a></li>
-                    <li>${sessionScope.loginUser.nm}(${sessionScope.loginUser.uid})님 환영합니다.</li>
-                </c:if>
-                <c:if test="${sessionScope.loginUser == null}">
-                    <li><a href="/user/login">로그인</a></li>
-                    <li><a href="/user/join">회원가입</a></li>
-                </c:if>
+                <li><a href="/board/list">게시판</a></li>
+                <li><a href="/board/rank?type=1">조회수 Top 10</a></li>
+                <li><a href="/board/rank?type=2">댓글수 Top 10</a></li>
+                <li><a href="/board/rank?type=3">좋아요 Top 10</a></li>
+            <c:if test="${sessionScope.loginUser != null}">
+                <li><a href="/board/regmod">글쓰기</a></li>
+                <li><a href="/user/logout">로그아웃</a></li>
+                <li>${sessionScope.loginUser.nm}(${sessionScope.loginUser.uid})님 환영합니다.</li>
+            </c:if>
+            <c:if test="${sessionScope.loginUser == null}">
+                <li><a href="/user/login">로그인</a></li>
+                <li><a href="/user/join">회원가입</a></li>
+            </c:if>
             </ul>
         </div>
         <div class="body">

@@ -5,15 +5,10 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class BoardVO {
-    private int iboard;
-    private String title;
+public class BoardCmtVO {
+    private int icmt;
     private String ctnt;
     private int writer;
-    private int hit;
-    private int cnt;
     private String rdt;
-    private String mdt;
-
     private String writerNm;
 }

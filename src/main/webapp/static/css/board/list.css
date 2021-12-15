@@ -1,3 +1,9 @@
+#boardTableWrap{
+    width: 100vh;
+}
+#boardTable{
+    margin: 0 auto;
+}
 #boardTable tr:not(:first-child):hover{
     background-color: #efefef;
     cursor: pointer;

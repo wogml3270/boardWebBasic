@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=utf-8" language="java" %>
-<h1 class="login-title">로그인 페이지</h1>
+<h1 class="page-title">로그인 페이지</h1>
 <div class="wrap">
     <div>
     <form action="/user/login" method="post" id="frm" onsubmit="return frmSubmitEvent();">
