@@ -1,7 +1,6 @@
 package com.koreait.basic.dao;
 
 import com.koreait.basic.DbUtils;
-import com.koreait.basic.board.model.BoardDTO;
 import com.koreait.basic.board.model.BoardHeartEntity;
 
 import java.sql.*;

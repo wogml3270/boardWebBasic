@@ -2,20 +2,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <link rel="stylesheet" href="/static/css/board/list.css?ver=1">
-<h1>${requestScope.title}</h1>
-<c:choose>
-    <c:when test="${fn:length(requestScope.list) == 0}">
-        <div>랭킹이 없습니다.</div>
-    </c:when>
-    <c:otherwise>
+<h1 class="rankTitle">${requestScope.title}</h1>
+    <c:if test="${fn:length(requestScope.list) == 0}">
+        <h3>랭킹이 없습니다.</h3>
+    </c:if>
+    <c:if test="${fn:length(requestScope.list) > 0}">
         <div>
             <table id="boardTable">
                 <colgroup>
-                    <col width="20%">
-                    <col>
-                    <col>
-                    <col width="100px">
-                    <col>
+                    <col width="5%">
+                    <col width="30%">
+                    <col width="5%">
+                    <col width="30%">
+                    <col width="30%">
                 </colgroup>
                 <tr>
                     <th>no</th>
@@ -45,6 +44,5 @@
                 </c:forEach>
             </table>
         </div>
-    </c:otherwise>
-</c:choose>
+    </c:if>
 <script src="/static/js/board/list.js?ver=1"></script>
